@@ -1,0 +1,143 @@
+      <%- include('../partials/header.ejs') %>
+      <!-- ============================================================== -->
+      <!-- End Left Sidebar - style you can find in sidebar.scss  -->
+      <!-- ============================================================== -->
+      <!-- ============================================================== -->
+      <!-- Page wrapper  -->
+      <!-- ============================================================== -->
+      <div class="page-wrapper">
+        <!-- ============================================================== -->
+        <!-- Bread crumb and right sidebar toggle -->
+        <!-- ============================================================== -->
+        <div class="page-breadcrumb">
+          <div class="row">
+            <div class="col-12 d-flex no-block align-items-center">
+              <h4 class="page-title">Form Basic</h4>
+              <div class="ms-auto text-end">
+                <nav aria-label="breadcrumb">
+                  <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">
+                      Library
+                    </li>
+                  </ol>
+                </nav>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- ============================================================== -->
+        <!-- End Bread crumb and right sidebar toggle -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Container fluid  -->
+        <!-- ============================================================== -->
+        <div class="container-fluid">
+          <!-- ============================================================== -->
+          <!-- Start Page Content -->
+          <!-- ============================================================== -->
+          <div class="row">
+            <div class="col-md-6">
+              <div class="card">
+                <form class="form-horizontal" action="" method="post" enctype="multipart/form-data">
+                  <div class="card-body">
+                    <h4 class="card-title">ExtraCategory Info</h4>
+                    <div class="form-group row">
+                      <label
+                        for="name"
+                        class="col-sm-3 text-end control-label col-form-label"
+                        >ExtraCategory Name</label
+                      >
+                      <div class="col-sm-9">
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="name"
+                          name="name"
+                          placeholder="ExtraCategory Name Here"
+                        />
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label
+                        for="image"
+                        class="col-sm-3 text-end control-label col-form-label"
+                        >ExtraCategory Image</label
+                      >
+                      <div class="col-sm-9">
+                        <input
+                          type="file"
+                          class="form-control"
+                          id="image"
+                          name="image"
+                        />
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label
+                        for="category"
+                        class="col-sm-3 text-end control-label col-form-label"
+                        >Category</label
+                      >
+                      <div class="col-sm-9">
+                        <select name="category" id="category" class="form-select">
+                          <option value="" disabled selected>--Select-Category--</option>
+                            <% categories.forEach((value) => { 
+                              const {id,name} = value;
+                            %>
+                            <option value="<%= id %>"><%= name %></option>
+                            <% }) %>
+                        </select>
+                      </div>
+                    </div>
+                     <div class="form-group row">
+                      <label
+                        for="category"
+                        class="col-sm-3 text-end control-label col-form-label"
+                        >SubCategory</label
+                      >
+                      <div class="col-sm-9">
+                        <select name="subcategory" id="category" class="form-select">
+                          <option value="" disabled selected>--Select-Category--</option>
+                            <% subcategories.forEach((value) => { 
+                              const {id,name} = value;
+                            %>
+                            <option value="<%= id %>"><%= name %></option>
+                            <% }) %>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="border-top">
+                    <div class="card-body">
+                      <button type="submit" class="btn btn-primary">
+                        Submit
+                      </button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+              
+            </div>
+            
+          </div>
+         
+          <!-- ============================================================== -->
+          <!-- End PAge Content -->
+          <!-- ============================================================== -->
+          <!-- ============================================================== -->
+          <!-- Right sidebar -->
+          <!-- ============================================================== -->
+          <!-- .right-sidebar -->
+          <!-- ============================================================== -->
+          <!-- End Right sidebar -->
+          <!-- ============================================================== -->
+        </div>
+        <!-- ============================================================== -->
+        <!-- End Container fluid  -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- footer -->
+        <!-- ============================================================== -->
+        <%- include('../partials/footer.ejs') %>
+        

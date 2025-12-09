@@ -1,0 +1,90 @@
+      <%- include('../partials/header.ejs') %>
+      <!-- ============================================================== -->
+      <!-- End Left Sidebar - style you can find in sidebar.scss  -->
+      <!-- ============================================================== -->
+      <!-- ============================================================== -->
+      <!-- Page wrapper  -->
+      <!-- ============================================================== -->
+      <div class="page-wrapper">
+        <!-- ============================================================== -->
+        <!-- Bread crumb and right sidebar toggle -->
+        <!-- ============================================================== -->
+        <div class="page-breadcrumb">
+          <div class="row">
+            <div class="col-12 d-flex no-block align-items-center">
+              <h4 class="page-title">Tables</h4>
+              <div class="ms-auto text-end">
+                <nav aria-label="breadcrumb">
+                  <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">
+                      Library
+                    </li>
+                  </ol>
+                </nav>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- ============================================================== -->
+        <!-- End Bread crumb and right sidebar toggle -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Container fluid  -->
+        <!-- ============================================================== -->
+        <div class="container-fluid">
+          <div class="row">
+
+            <% products.forEach((value, index) => { 
+                const { id, name, image, category, subcategory, extracategory, price } = value;
+            %>
+
+              <div class="col-md-3 col-sm-6 mb-4">
+                <div class="card" style="width: 100%; height: 350px; overflow: hidden;">
+                  
+                  <!-- Product Image -->
+                  <a href="/product/view/<%= id %>">
+                    <img 
+                      src="<%= image %>" 
+                      class="card-img-top" 
+                      alt="<%= name %>" 
+                      style="height: 180px; object-fit: cover;"
+                    >
+                  </a>
+
+                  <!-- Product Details -->
+                  <div class="card-body p-2">
+                    <h5 class="card-title text-center"><%= name %></h5>
+
+                    <!-- PRICE -->
+                    <p class="text-center m-0">
+                      <strong>₹ <%= price %></strong>
+                    </p>
+
+                    <p class="m-0"><strong>Category:</strong> <%= category ? category.name : 'N/A' %></p>
+                    <p class="m-0"><strong>SubCategory:</strong> <%= subcategory ? subcategory.name : 'N/A' %></p>
+                    <p class="m-0"><strong>ExtraCategory:</strong> <%= extracategory ? extracategory.name : 'N/A' %></p>
+
+                    <!-- Actions -->
+                    <div class="mt-2 text-center">
+                      <a href="/product/edit/<%= id %>" class="btn btn-warning btn-sm">Edit</a>
+                      <a href="/product/delete/<%= id %>" class="btn btn-danger btn-sm">Delete</a>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+            <% }) %>
+
+          </div>
+        </div>
+
+        <!-- ============================================================== -->
+        <!-- End Container fluid  -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- footer -->
+        <!-- ============================================================== -->
+        <%- include('../partials/footer.ejs') %>
+        
