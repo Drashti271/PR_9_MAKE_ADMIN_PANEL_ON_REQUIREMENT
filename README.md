@@ -159,11 +159,3 @@ Contains all views for:
 Loads express, middleware, routes, DB connection and starts the server.
 
 ---
-
-If you want, I can add:
-✔ API documentation
-✔ Screenshot documentation
-✔ Setup instructions
-✔ Database schema diagrams
-✔ ER diagram
-✔ Markdown styling improvements
